@@ -151,3 +151,15 @@ a:hover {
   padding-left: 50px;
   top: 0;
 }
+
+nav {
+  position: fixed; 
+  top: 0; 
+  right: 0; 
+}
+
+.home-link 
+{
+  width:75px;
+  padding-bottom: 35px;
+}

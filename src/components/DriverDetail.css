@@ -1,0 +1,78 @@
+.driver-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  .driver-detail h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #e10600;
+  }
+  
+  .driver-profile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .driver-basic-info {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .driver-basic-info p {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .driver-basic-info strong {
+    font-weight: 600;
+  }
+  
+  .driver-image {
+    flex: 0 0 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .driver-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .team-info {
+    margin-top: 30px;
+  }
+  
+  .team-info h2 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+  
+  .loading, .error, .not-found {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .loading {
+    color: #666;
+  }
+  
+  .error, .not-found {
+    color: #e10600;
+  }
+  
+  @media (max-width: 600px) {
+    .driver-profile {
+      flex-direction: column-reverse;
+    }
+    
+    .driver-image {
+      margin: 0 auto;
+    }
+  }

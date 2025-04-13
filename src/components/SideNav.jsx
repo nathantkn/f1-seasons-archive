@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router-dom";
 import React from 'react';
 import logo from '../assets/logo.png';
 
@@ -9,8 +10,10 @@ const SideNav = () => {
             </div>
             <div className='menu'>
                 <ul>
-                    <li className="menu-item">
-                        <a href="#home">Home</a>
+                    <li className="menu-item" key="home-button">
+                        <Link style={{ color: "white" }} to="/">
+                            Home
+                        </Link>
                     </li>
                     <li className="menu-item">
                         <a href="#drivers">Drivers</a>
