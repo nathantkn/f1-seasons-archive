@@ -1,0 +1,53 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.whole-page {
+    display: flex;
+}
+
+.content {
+    margin-left: 225px; /* Same as SideNav width */
+    width: calc(100% - 225px);
+}
+
+.entire-page {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-family: Avenir, Century Gothic, sans-serif;
+    font-size: calc(10px + 2vmin);
+    font-style: normal;
+    font-weight: 100;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 40px;
+}
+
+.page {
+    padding-left: 50px;
+    top: 0;
+}
+
+nav {
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+}
+
+.row, .container {
+    align-items: center;
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 20px;
+    padding-right: 40px;
+}

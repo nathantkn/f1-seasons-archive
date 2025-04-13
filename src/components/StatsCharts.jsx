@@ -1,4 +1,5 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import '../styles/StatsCharts.css';
 
 const StatsCharts = ({ standings, selectedSeason }) => {
   if (!standings || standings.length === 0) return null;

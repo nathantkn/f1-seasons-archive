@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import './App.css'
-import './components/StatsCharts.css'
+import './styles/Layout.css'
+import './styles/Components.css'
 import StatsCharts from './components/StatsCharts'
+import SeasonSelect from './components/SeasonSelect'
+import SeasonSummary from './components/SeasonSummary'
+import SeasonData from './components/SeasonData'
 
 function App() {
   const [seasons, setSeasons] = useState([])
@@ -101,92 +104,29 @@ function App() {
   return (
     <div>
       <h1>F1 Seasons Archive</h1>
-      <div className='season-select'>
-        <select value={selectedSeason} onChange={handleSeasonChange}>
-          <option value="">Select Season</option>
-          {seasons.map((season) => (
-            <option key={season.season} value={season.season}>
-              {season.season}
-            </option>
-          ))}
-        </select>
-      </div>
+      
+      <SeasonSelect 
+        seasons={seasons}
+        selectedSeason={selectedSeason}
+        onSeasonChange={handleSeasonChange}
+      />
+      
       {standings.length > 0 && (
         <div className='page'>
+          <SeasonSummary standings={standings} />
+          
           <div className='row'>
-            <div className='card'>
-              <h2>Drivers' Champion</h2>
-              <h3>{standings[0].Driver.givenName} {standings[0].Driver.familyName}</h3>
-            </div>
-            <div className='card'>
-              <h2>Constructors' Champion</h2>
-              <h3>{standings[0].Constructors[0].name}</h3>
-            </div>
-            <div className='card'>
-              <h2>Total Points</h2>
-              <h3>{standings.reduce((total, standing) => total + parseInt(standing.points), 0)}</h3>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='list'>
-              <div className='filters'>
-                <div className='filter'>
-                  <h2>Search Driver</h2>
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                    placeholder="Search Driver"
-                  />
-                </div>
-                <div className='filter'>
-                  <h2>Filter</h2>
-                  <select onChange={handleConstructorChange} value={selectedConstructor}>
-                    <option value="">All Constructors</option>
-                    {constructorOptions.map((constructor) => (
-                      <option key={constructor} value={constructor}>
-                        {constructor}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className='table'>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Position</th>
-                      <th>Driver</th>
-                      <th>Constructor</th>
-                      <th>Wins</th>
-                      <th>Points</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  {filteredStandings.map((standing) => (
-                      <tr
-                        key={standing.Driver.driverId}
-                        onClick={() => navigateToDriver(standing.Driver.driverId, standing.Driver)}
-                        style={{ cursor: 'pointer' }}
-                      >
-                        <td>{standing.position}</td>
-                        <td>
-                          {standing.Driver.givenName} {standing.Driver.familyName}
-                        </td>
-                        <td>
-                          {standing.Constructors[0].name}
-                        </td>
-                        <td>{standing.wins}</td>
-                        <td>{standing.points}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+            <SeasonData 
+              searchQuery={searchQuery}
+              onSearchChange={handleSearchChange}
+              selectedConstructor={selectedConstructor}
+              onConstructorChange={handleConstructorChange}
+              constructorOptions={constructorOptions}
+              filteredStandings={filteredStandings}
+              navigateToDriver={navigateToDriver}
+            />
           </div>
           
-          {/* Add the new charts component */}
           <StatsCharts standings={standings} selectedSeason={selectedSeason} />
         </div>
       )}

@@ -47,7 +47,7 @@ function DriverDetail() {
           )
           const data = await response.json()
           if (data && data.length > 0) {
-            setDriverExtra(data[0])  // Assuming we want the first matching driver
+            setDriverExtra(data[0])
           }
         } catch (error) {
           console.error("Error fetching extra driver info from OpenF1 API:", error)
@@ -154,7 +154,6 @@ function DriverDetail() {
         </div>
       )}
       
-      {/* Use button to navigate back instead of anchor tag */}
       <div className="back-link" style={{ marginTop: '30px' }}>
         <button 
           onClick={handleBackToStandings}

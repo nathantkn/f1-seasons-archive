@@ -1,6 +1,7 @@
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from 'react';
 import logo from '../assets/logo.png';
+import '../styles/SideNav.css';
 
 const SideNav = () => {
     return (
@@ -11,7 +12,7 @@ const SideNav = () => {
             <div className='menu'>
                 <ul>
                     <li className="menu-item" key="home-button">
-                        <Link style={{ color: "white" }} to="/">
+                        <Link className="home-link" to="/">
                             Home
                         </Link>
                     </li>

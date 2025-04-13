@@ -1,0 +1,62 @@
+/* Card Styles */
+.card, .list {
+    border-radius: 24px;
+    font-size: medium;
+    text-align: center;
+}
+
+.card {
+    margin: 20px auto;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background-color: hsla(0, 0%, 100%, .1);
+    box-shadow: 0 15px 25px hsla(0, 2%, 50%, .2);
+    margin-bottom: 30px;
+    width: 300px;
+}
+
+/* List Styles */
+.list {
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: hsla(0, 0%, 100%, .092);
+    box-shadow: 0 15px 25px hsla(0, 2%, 50%, .154);
+    padding: 20px 20px 40px;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+/* Filter Styles */
+.filters {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.filter {
+    margin-right: 20px;
+}
+
+.season-select {
+    padding: 10px;
+}
+
+  /* Table Styles */
+table {
+    margin-left: 10px;
+    text-align: center;
+    border-spacing: 10px;
+}
+
+th {
+    margin-right: 50px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+td {
+    width: 1000px;
+}
